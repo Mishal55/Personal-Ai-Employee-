@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://localhost:8069",
+  "db": "odoo",
+  "username": "admin",
+  "password": "your_password_here",
+  "companyId": null,
+  "pendingApprovalDir": "./Pending_Approval"
+}

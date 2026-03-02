@@ -1,0 +1,56 @@
+[Unit]
+Description=AI Employee Orchestrator Service
+Documentation=https://github.com/ai-employee/oracle-cloud-deploy
+After=network.target network-online.target ai-employee-watcher.service
+Wants=network-online.target
+Requires=ai-employee-watcher.service
+
+[Service]
+Type=simple
+User=oracle
+Group=oracle
+WorkingDirectory=/home/oracle/ai-employee
+
+# Environment setup
+Environment="PATH=/usr/local/bin:/usr/bin:/bin:/home/oracle/.local/bin"
+Environment="PYTHONUNBUFFERED=1"
+Environment="PYTHONDONTWRITEBYTECODE=1"
+Environment="NODE_ENV=production"
+
+# Load environment variables from file (secrets not in git)
+EnvironmentFile=-/home/oracle/ai-employee/.env
+
+# Main orchestrator process
+ExecStart=/usr/bin/python3 -m ai_employee.orchestrator.main
+ExecReload=/bin/kill -s HUP $MAINPID
+
+# Restart policy for 24/7 operation
+Restart=always
+RestartSec=15
+StartLimitInterval=0
+
+# Resource limits
+LimitNOFILE=65535
+Nice=-5
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+PrivateTmp=true
+ReadWritePaths=/home/oracle/ai-employee/logs
+ReadWritePaths=/home/oracle/ai-employee/data
+ReadWritePaths=/home/oracle/ai-employee/vault
+ReadWritePaths=/home/oracle/ai-employee/pending_approval
+
+# Health check
+ExecStartPre=/home/oracle/ai-employee/scripts/health-check.sh
+ExecStartPost=/home/oracle/ai-employee/scripts/notify-started.sh
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ai-employee-orchestrator
+
+[Install]
+WantedBy=multi-user.target

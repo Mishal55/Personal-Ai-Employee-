@@ -1,0 +1,22 @@
+{
+  "name": "twitter-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Twitter/X API - Draft tweets, threads, and summaries",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "mcp",
+    "twitter",
+    "x",
+    "social-media"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

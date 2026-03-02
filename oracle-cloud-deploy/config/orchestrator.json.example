@@ -1,0 +1,42 @@
+{
+  "watchers": {
+    "enabled": true,
+    "restart_on_failure": true,
+    "health_check_interval": 30
+  },
+  "vault_sync": {
+    "enabled": true,
+    "sync_interval": 300,
+    "auto_push": true,
+    "auto_pull": true
+  },
+  "tasks": {
+    "ceo_briefing": {
+      "enabled": true,
+      "schedule": "0 7 * * 1"
+    },
+    "invoice_processing": {
+      "enabled": true,
+      "schedule": "*/30 * * * *"
+    },
+    "data_backup": {
+      "enabled": true,
+      "schedule": "0 2 * * *"
+    },
+    "odoo_sync": {
+      "enabled": true,
+      "schedule": "*/15 * * * *"
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "retention_days": 30,
+    "path": "/var/log/ai-employee"
+  },
+  "notifications": {
+    "enabled": false,
+    "on_error": true,
+    "on_deploy": true,
+    "channels": []
+  }
+}

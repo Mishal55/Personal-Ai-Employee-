@@ -1,0 +1,43 @@
+[Unit]
+Description=AI Employee Vault Sync Service
+Documentation=https://github.com/ai-employee/oracle-cloud-deploy
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=oracle
+Group=oracle
+WorkingDirectory=/home/oracle/ai-employee
+
+# Environment setup
+Environment="PATH=/usr/local/bin:/usr/bin:/bin:/home/oracle/.local/bin"
+Environment="GIT_SSH_COMMAND=ssh -i /home/oracle/.ssh/vault_sync_key -o StrictHostKeyChecking=no"
+
+# Vault sync process - runs continuously
+ExecStart=/home/oracle/ai-employee/scripts/vault-sync-daemon.sh
+ExecReload=/bin/kill -s HUP $MAINPID
+
+# Restart policy
+Restart=always
+RestartSec=30
+StartLimitInterval=0
+
+# Resource limits
+LimitNOFILE=65535
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+PrivateTmp=true
+ReadWritePaths=/home/oracle/ai-employee
+ReadWritePaths=/home/oracle/.ssh
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ai-employee-vault-sync
+
+[Install]
+WantedBy=multi-user.target

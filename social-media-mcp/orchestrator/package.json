@@ -1,0 +1,22 @@
+{
+  "name": "social-media-orchestrator",
+  "version": "1.0.0",
+  "description": "Unified orchestrator for cross-platform social media posting",
+  "type": "module",
+  "main": "src/orchestrator.js",
+  "scripts": {
+    "start": "node src/orchestrator.js",
+    "dev": "node --watch src/orchestrator.js"
+  },
+  "keywords": [
+    "mcp",
+    "social-media",
+    "orchestrator",
+    "cross-platform"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

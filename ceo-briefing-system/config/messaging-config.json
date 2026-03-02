@@ -1,0 +1,17 @@
+{
+  "slack": {
+    "webhookUrl": "https://hooks.slack.com/services/YOUR/WEBHOOK/URL",
+    "botToken": "",
+    "defaultChannel": "#ceo-briefings"
+  },
+  "teams": {
+    "webhookUrl": "https://outlook.office.com/webhook/YOUR/TEAMS/WEBHOOK"
+  },
+  "defaultPlatform": "slack",
+  "briefingNotifications": {
+    "enabled": true,
+    "platforms": ["slack", "teams"],
+    "period": "weekly",
+    "customMessage": "📋 *New CEO Briefing Available*\n\nThe weekly CEO briefing has been generated and is ready for your review.\n\nIt includes:\n• Real-time financial data from Odoo\n• Week-over-week trend analysis\n• Business goals progress\n• Team updates\n\nPlease review at your earliest convenience."
+  }
+}

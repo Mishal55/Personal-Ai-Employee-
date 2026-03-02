@@ -1,0 +1,22 @@
+{
+  "name": "facebook-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Facebook Graph API - Draft posts and summaries",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "mcp",
+    "facebook",
+    "social-media",
+    "graph-api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

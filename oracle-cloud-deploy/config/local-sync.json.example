@@ -1,0 +1,35 @@
+{
+  "$schema": "Local Sync Configuration",
+  "$description": "Copy this file to local-sync.json and customize for your environment",
+
+  "cloud_host": "192.168.1.100",
+  "cloud_user": "oracle",
+  "cloud_path": "/home/oracle/ai-employee",
+  "local_path": "/path/to/your/local/vault",
+
+  "ssh_key": "~/.ssh/vault_sync_key",
+
+  "exclude_patterns": [
+    ".env",
+    ".env.*",
+    "!.env.example",
+    "*.token",
+    "*.key",
+    "*.secret",
+    "*credentials*",
+    "*api_key*",
+    "secrets/",
+    "tokens/",
+    "__pycache__/",
+    "node_modules/",
+    "*.log",
+    "logs/"
+  ],
+
+  "sync_mode": "bidirectional",
+  "dry_run": false,
+  "verbose": true,
+
+  "last_sync": null,
+  "sync_history": []
+}

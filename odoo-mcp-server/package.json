@@ -1,0 +1,23 @@
+{
+  "name": "odoo-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Odoo Community v19+ JSON-RPC API integration",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "mcp",
+    "odoo",
+    "json-rpc",
+    "invoice",
+    "payment"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

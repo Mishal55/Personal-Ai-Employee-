@@ -1,0 +1,26 @@
+{
+  "$schema": "CEO Briefing System Configuration",
+  "$description": "Copy this file to config.json and customize for your environment",
+  
+  "output_dir": "./Briefings",
+  "pending_dir": "./Pending_Approval",
+  "briefing_url": "https://your-company.com/briefings/{filename}",
+  
+  "email_config": "./config/email-config.json",
+  "odoo_config": "./config/odoo-config.json",
+  "messaging_config": "./config/messaging-config.json",
+  
+  "briefingNotifications": {
+    "enabled": true,
+    "platforms": ["slack"],
+    "period": "weekly",
+    "customMessage": ""
+  },
+  
+  "defaults": {
+    "period": "week",
+    "enable_trends": true,
+    "require_approval": true,
+    "auto_approve": false
+  }
+}

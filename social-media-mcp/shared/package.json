@@ -1,0 +1,12 @@
+{
+  "name": "social-media-mcp-shared",
+  "version": "1.0.0",
+  "description": "Shared utilities for Social Media MCP Servers",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    "./pending-approval": "./src/pending-approval.js",
+    "./content-formatter": "./src/content-formatter.js",
+    "./config": "./src/config.js"
+  }
+}

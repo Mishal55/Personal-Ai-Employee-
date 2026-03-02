@@ -1,0 +1,8 @@
+{
+  "odoo": {
+    "base_url": "http://localhost:8069",
+    "db": "odoo",
+    "username": "admin",
+    "password": "your_password"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "Vault Sync Configuration",
+  "$description": "Git-based vault sync configuration",
+
+  "git_remote": "oracle@<vm-ip>:/home/oracle/ai-employee-vault.git",
+  "vault_path": "/home/oracle/ai-employee/vault",
+  "sync_branch": "vault-sync",
+
+  "sync_interval": 300,
+  "auto_push": true,
+  "auto_pull": true,
+  "auto_commit": true,
+  "commit_prefix": "vault-sync:"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "email-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for sending emails with attachments",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "mcp",
+    "email",
+    "smtp",
+    "attachments"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "nodemailer": "^6.9.0"
+  }
+}

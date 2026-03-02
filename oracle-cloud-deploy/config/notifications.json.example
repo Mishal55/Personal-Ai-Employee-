@@ -1,0 +1,51 @@
+{
+  "$schema": "Notification Configuration",
+  "$description": "Configure notifications for deployment, health, and security alerts",
+
+  "slack": {
+    "webhook_url": "https://hooks.slack.com/services/YOUR/WEBHOOK/URL",
+    "channel": "#ai-employee-alerts"
+  },
+
+  "teams": {
+    "webhook_url": "https://outlook.office.com/webhook/YOUR/TEAMS/WEBHOOK"
+  },
+
+  "email": {
+    "recipients": [
+      "admin@company.com",
+      "devops@company.com"
+    ],
+    "smtp": {
+      "host": "smtp.gmail.com",
+      "port": 587,
+      "user": "notifications@company.com",
+      "password": "your-app-password"
+    }
+  },
+
+  "enabled_channels": ["slack", "teams"],
+
+  "notification_rules": {
+    "deployment": {
+      "on_success": true,
+      "on_failure": true,
+      "channels": ["slack", "email"]
+    },
+    "health_check": {
+      "on_unhealthy": true,
+      "on_degraded": true,
+      "channels": ["slack", "teams", "email"]
+    },
+    "security": {
+      "on_critical": true,
+      "on_high": true,
+      "on_medium": false,
+      "channels": ["slack", "teams", "email"]
+    },
+    "approval_request": {
+      "enabled": true,
+      "channels": ["slack", "email"]
+    }
+  }
+}

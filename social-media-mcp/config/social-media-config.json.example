@@ -1,0 +1,26 @@
+{
+  "facebook": {
+    "appId": "your_facebook_app_id",
+    "appSecret": "your_facebook_app_secret",
+    "accessToken": "your_facebook_page_access_token",
+    "pageId": "your_facebook_page_id",
+    "apiVersion": "v19.0"
+  },
+  "instagram": {
+    "appId": "your_facebook_app_id",
+    "appSecret": "your_facebook_app_secret",
+    "accessToken": "your_instagram_access_token",
+    "instagramAccountId": "your_instagram_business_account_id",
+    "apiVersion": "v19.0"
+  },
+  "twitter": {
+    "apiKey": "your_twitter_api_key",
+    "apiSecret": "your_twitter_api_secret",
+    "accessToken": "your_twitter_access_token",
+    "accessSecret": "your_twitter_access_secret",
+    "bearerToken": "your_twitter_bearer_token",
+    "apiVersion": "2"
+  },
+  "pendingApprovalDir": "./Pending_Approval",
+  "autoGenerateApprovalFiles": true
+}

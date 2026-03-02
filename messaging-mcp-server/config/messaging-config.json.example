@@ -1,0 +1,17 @@
+{
+  "slack": {
+    "webhookUrl": "https://hooks.slack.com/services/YOUR/WEBHOOK/URL",
+    "botToken": "xoxb-YOUR-BOT-TOKEN",
+    "defaultChannel": "#ceo-briefings"
+  },
+  "teams": {
+    "webhookUrl": "https://outlook.office.com/webhook/YOUR/WEBHOOK/URL"
+  },
+  "defaultPlatform": "slack",
+  "briefingNotifications": {
+    "enabled": true,
+    "platforms": ["slack"],
+    "period": "weekly",
+    "customMessage": ""
+  }
+}
